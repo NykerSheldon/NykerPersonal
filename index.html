@@ -423,122 +423,232 @@ body {
 
 /* ─── LOGISTICS ─── */
 .logistics-section {
-  background: linear-gradient(rgba(251,247,239,0.93), rgba(251,247,239,0.93)), url('https://images.unsplash.com/photo-1474487548417-781cb6d646b3?w=1600&q=80') center/cover no-repeat fixed;
+  background: linear-gradient(rgba(10,20,35,0.88), rgba(10,20,35,0.88)), url('https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=1600&q=80') center/cover no-repeat fixed;
   padding: 80px 40px;
 }
 
-.timeline {
-  position: relative;
-  margin-top: 40px;
-}
+.logistics-section .section-title { color: var(--white); }
+.logistics-section .section-label { color: var(--gold); }
+.logistics-section .gold-rule { background: var(--gold); }
 
-.timeline::before {
-  content: '';
-  position: absolute;
-  left: 120px;
-  top: 0;
-  bottom: 0;
-  width: 2px;
-  background: linear-gradient(180deg, var(--gold) 0%, rgba(201,168,76,0.2) 100%);
-}
-
-.timeline-item {
+/* Journey ribbon */
+.journey-ribbon {
   display: flex;
-  gap: 32px;
-  margin-bottom: 28px;
-  position: relative;
-  align-items: flex-start;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  margin: 0 auto 52px;
+  max-width: 900px;
 }
 
-.timeline-date {
-  width: 100px;
-  text-align: right;
-  flex-shrink: 0;
-  padding-top: 4px;
+.jr-stop {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
 }
 
-.timeline-date .date-main {
-  font-weight: 700;
-  font-size: 12px;
-  color: var(--navy);
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.timeline-date .date-sub {
-  font-size: 11px;
-  color: var(--text-light);
-}
-
-.timeline-dot {
-  width: 14px;
-  height: 14px;
+.jr-icon-circle {
+  width: 72px;
+  height: 72px;
   border-radius: 50%;
-  background: var(--gold);
-  border: 3px solid var(--cream);
-  box-shadow: 0 0 0 2px var(--gold);
-  flex-shrink: 0;
-  margin-top: 4px;
+  background: rgba(255,255,255,0.08);
+  border: 2px solid rgba(201,168,76,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
   position: relative;
-  z-index: 2;
-  margin-left: -6px;
 }
 
-.timeline-dot.home {
-  background: var(--navy);
-  box-shadow: 0 0 0 2px var(--navy);
+.jr-icon-circle.home {
+  background: rgba(201,168,76,0.15);
+  border-color: var(--gold);
 }
 
-.timeline-content {
-  flex: 1;
-  background: var(--white);
-  border-radius: 10px;
-  padding: 18px 22px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-  border-left: 3px solid var(--gold);
-}
-
-.timeline-content.london-border { border-left-color: var(--london); }
-.timeline-content.paris-border  { border-left-color: var(--paris); }
-.timeline-content.swiss-border  { border-left-color: var(--swiss); }
-
-.timeline-content h4 {
-  font-family: 'Playfair Display', serif;
-  font-size: 15px;
-  font-weight: 600;
+.jr-nights {
+  position: absolute;
+  bottom: -10px;
+  background: var(--gold);
   color: var(--navy);
-  margin-bottom: 4px;
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 0.5px;
+  padding: 2px 7px;
+  border-radius: 20px;
+  white-space: nowrap;
 }
 
-.timeline-content .tc-method {
+.jr-city-name {
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
   font-size: 11px;
-  color: var(--text-light);
-  margin-bottom: 6px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--white);
+  margin-top: 12px;
+}
+
+.jr-city-sub {
+  font-size: 10px;
+  color: rgba(255,255,255,0.4);
+  letter-spacing: 0.5px;
   font-style: italic;
 }
 
-.timeline-content .tc-cost {
-  display: inline-block;
-  background: var(--gold-pale);
-  color: var(--navy);
+.jr-connector {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  padding: 0 6px;
+  padding-bottom: 40px;
+}
+
+.jr-arrow {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.jr-arrow-line {
+  width: 28px;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(201,168,76,0.2), rgba(201,168,76,0.7));
+}
+
+.jr-transport-icon {
+  font-size: 18px;
+}
+
+.jr-mode {
+  font-size: 8px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 700;
+  opacity: 0.7;
+  text-align: center;
+}
+
+/* Journey cards grid */
+.journey-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.journey-card {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 14px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.journey-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 36px rgba(0,0,0,0.4);
+}
+
+.journey-card-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px 22px 16px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.jc-icon-circle {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  flex-shrink: 0;
+}
+
+.jc-icon-circle.flight  { background: rgba(46,93,142,0.35); border: 1px solid rgba(46,93,142,0.6); }
+.jc-icon-circle.train   { background: rgba(142,46,93,0.35); border: 1px solid rgba(142,46,93,0.6); }
+.jc-icon-circle.taxi    { background: rgba(201,168,76,0.25); border: 1px solid rgba(201,168,76,0.5); }
+.jc-icon-circle.swiss   { background: rgba(46,142,93,0.35); border: 1px solid rgba(46,142,93,0.6); }
+
+.jc-header-text {
+  flex: 1;
+}
+
+.jc-mode-label {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 4px;
+}
+
+.jc-route {
+  font-family: 'Playfair Display', serif;
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--white);
+  line-height: 1.2;
+}
+
+.jc-date-badge {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+  margin-top: 3px;
+}
+
+.journey-card-body {
+  padding: 16px 22px 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.jc-detail {
+  font-size: 12.5px;
+  color: rgba(255,255,255,0.65);
+  font-style: italic;
+  line-height: 1.5;
+}
+
+.jc-cost {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(201,168,76,0.18);
+  border: 1px solid rgba(201,168,76,0.35);
+  border-radius: 20px;
+  padding: 4px 12px;
   font-size: 11px;
   font-weight: 700;
-  padding: 3px 10px;
-  border-radius: 20px;
+  color: var(--gold-light);
+  align-self: flex-start;
 }
 
 .open-items {
-  margin-top: 48px;
-  background: var(--white);
+  margin-top: 8px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
   border-radius: 12px;
   padding: 32px;
-  box-shadow: 0 2px 16px rgba(0,0,0,0.06);
 }
 
 .open-items h3 {
   font-family: 'Playfair Display', serif;
   font-size: 20px;
-  color: var(--navy);
+  color: var(--white);
   margin-bottom: 20px;
 }
 
@@ -547,7 +657,7 @@ body {
   align-items: flex-start;
   gap: 16px;
   padding: 12px 0;
-  border-bottom: 1px solid var(--cream-dark);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
 }
 
 .open-item-row:last-child { border-bottom: none; }
@@ -564,14 +674,14 @@ body {
 .open-item-row .item-label {
   font-weight: 700;
   font-size: 13px;
-  color: var(--navy);
+  color: var(--gold-light);
   width: 220px;
   flex-shrink: 0;
 }
 
 .open-item-row .item-action {
   font-size: 13px;
-  color: var(--text-mid);
+  color: rgba(255,255,255,0.6);
 }
 
 /* ─── LODGING ─── */
@@ -725,7 +835,7 @@ body {
 
 /* ─── FUNDING ─── */
 .funding-section {
-  background: linear-gradient(rgba(251,247,239,0.93), rgba(251,247,239,0.93)), url('https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=1600&q=80') center/cover no-repeat fixed;
+  background: linear-gradient(rgba(251,247,239,0.72), rgba(251,247,239,0.72)), url('https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=1600&q=80') center/cover no-repeat fixed;
   padding: 80px 40px;
 }
 
@@ -1149,77 +1259,151 @@ body {
     <h2 class="section-title">Logistics &amp; Timing</h2>
     <div class="gold-rule"></div>
 
-    <div class="timeline">
+    <!-- Journey Ribbon -->
+    <div class="journey-ribbon">
 
-      <div class="timeline-item">
-        <div class="timeline-date">
-          <div class="date-main">Wed Jul 29</div>
+      <div class="jr-stop">
+        <div class="jr-icon-circle home">🏠</div>
+        <div class="jr-city-name">Charlotte</div>
+        <div class="jr-city-sub">Home Base</div>
+      </div>
+
+      <div class="jr-connector">
+        <div class="jr-arrow"><div class="jr-arrow-line"></div><div class="jr-transport-icon">✈️</div><div class="jr-arrow-line"></div></div>
+        <div class="jr-mode">Overnight Flight</div>
+      </div>
+
+      <div class="jr-stop">
+        <div class="jr-icon-circle">🏰<span class="jr-nights">3 nights</span></div>
+        <div class="jr-city-name">London</div>
+        <div class="jr-city-sub">Covent Garden</div>
+      </div>
+
+      <div class="jr-connector">
+        <div class="jr-arrow"><div class="jr-arrow-line"></div><div class="jr-transport-icon">🚂</div><div class="jr-arrow-line"></div></div>
+        <div class="jr-mode">Eurostar</div>
+      </div>
+
+      <div class="jr-stop">
+        <div class="jr-icon-circle">🗼<span class="jr-nights">3 nights</span></div>
+        <div class="jr-city-name">Paris</div>
+        <div class="jr-city-sub">8th Arrondissement</div>
+      </div>
+
+      <div class="jr-connector">
+        <div class="jr-arrow"><div class="jr-arrow-line"></div><div class="jr-transport-icon">🚄</div><div class="jr-arrow-line"></div></div>
+        <div class="jr-mode">TGV + Swiss Rail</div>
+      </div>
+
+      <div class="jr-stop">
+        <div class="jr-icon-circle">🏔️<span class="jr-nights">4 nights</span></div>
+        <div class="jr-city-name">Grindelwald</div>
+        <div class="jr-city-sub">Swiss Alps</div>
+      </div>
+
+      <div class="jr-connector">
+        <div class="jr-arrow"><div class="jr-arrow-line"></div><div class="jr-transport-icon">✈️</div><div class="jr-arrow-line"></div></div>
+        <div class="jr-mode">Via Zurich</div>
+      </div>
+
+      <div class="jr-stop">
+        <div class="jr-icon-circle home">🏠</div>
+        <div class="jr-city-name">Charlotte</div>
+        <div class="jr-city-sub">Home Sweet Home</div>
+      </div>
+
+    </div>
+
+    <!-- Journey Cards -->
+    <div class="journey-grid">
+
+      <div class="journey-card">
+        <div class="journey-card-header">
+          <div class="jc-icon-circle flight">✈️</div>
+          <div class="jc-header-text">
+            <div class="jc-mode-label">Overnight Flight</div>
+            <div class="jc-route">Charlotte → London</div>
+            <div class="jc-date-badge">Wed Jul 29 · 5:55 PM departure</div>
+          </div>
         </div>
-        <div class="timeline-dot home"></div>
-        <div class="timeline-content">
-          <h4>Charlotte (CLT) → London Heathrow (LHR)</h4>
-          <div class="tc-method">American Nonstop · Main Cabin Extra · 5:55 PM departure → 6:55 AM arrival</div>
-          <span class="tc-cost">75,500 AA miles × 5 + $364</span>
+        <div class="journey-card-body">
+          <div class="jc-detail">American Nonstop · Main Cabin Extra · Arrives LHR 6:55 AM</div>
+          <div class="jc-cost">✈ 75,500 AA miles × 5 + $364</div>
         </div>
       </div>
 
-      <div class="timeline-item">
-        <div class="timeline-date">
-          <div class="date-main">Thu Jul 30</div>
+      <div class="journey-card">
+        <div class="journey-card-header">
+          <div class="jc-icon-circle taxi">🚕</div>
+          <div class="jc-header-text">
+            <div class="jc-mode-label">Ground Transfer</div>
+            <div class="jc-route">Heathrow → London Airbnb</div>
+            <div class="jc-date-badge">Thu Jul 30 · Morning arrival</div>
+          </div>
         </div>
-        <div class="timeline-dot"></div>
-        <div class="timeline-content london-border">
-          <h4>Heathrow → London Airbnb</h4>
-          <div class="tc-method">Taxi / car service · Approx. 45–75 min, traffic dependent</div>
-          <span class="tc-cost">Not yet budgeted</span>
-        </div>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-date">
-          <div class="date-main">Sun Aug 2</div>
-        </div>
-        <div class="timeline-dot"></div>
-        <div class="timeline-content paris-border">
-          <h4>London St Pancras → Paris Gare du Nord</h4>
-          <div class="tc-method">Eurostar · Approx. 2 hr 20 min, plus station check-in</div>
-          <span class="tc-cost">$1,050</span>
+        <div class="journey-card-body">
+          <div class="jc-detail">Taxi / car service · Approx. 45–75 min, traffic dependent</div>
+          <div class="jc-cost">🚕 Not yet budgeted</div>
         </div>
       </div>
 
-      <div class="timeline-item">
-        <div class="timeline-date">
-          <div class="date-main">Wed Aug 5</div>
+      <div class="journey-card">
+        <div class="journey-card-header">
+          <div class="jc-icon-circle train">🚂</div>
+          <div class="jc-header-text">
+            <div class="jc-mode-label">Eurostar · Under the Channel</div>
+            <div class="jc-route">London → Paris</div>
+            <div class="jc-date-badge">Sun Aug 2</div>
+          </div>
         </div>
-        <div class="timeline-dot"></div>
-        <div class="timeline-content swiss-border">
-          <h4>Paris Gare de Lyon → Grindelwald</h4>
-          <div class="tc-method">TGV + Swiss Rail · First Class · Approx. 6.5–7 hr via Basel and Interlaken</div>
-          <span class="tc-cost">$926</span>
-        </div>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-date">
-          <div class="date-main">Sun Aug 9</div>
-        </div>
-        <div class="timeline-dot"></div>
-        <div class="timeline-content swiss-border">
-          <h4>Grindelwald → Zurich Airport</h4>
-          <div class="tc-method">Swiss Rail · First Class · 5:45 AM – 8:44 AM · 2 hr 59 min · 3 changes</div>
-          <span class="tc-cost">$351.73</span>
+        <div class="journey-card-body">
+          <div class="jc-detail">St Pancras → Gare du Nord · Approx. 2 hr 20 min · Family total</div>
+          <div class="jc-cost">🚂 $1,050</div>
         </div>
       </div>
 
-      <div class="timeline-item">
-        <div class="timeline-date">
-          <div class="date-main">Sun Aug 9</div>
+      <div class="journey-card">
+        <div class="journey-card-header">
+          <div class="jc-icon-circle train">🚄</div>
+          <div class="jc-header-text">
+            <div class="jc-mode-label">TGV + Swiss Rail · First Class</div>
+            <div class="jc-route">Paris → Grindelwald</div>
+            <div class="jc-date-badge">Wed Aug 5</div>
+          </div>
         </div>
-        <div class="timeline-dot home"></div>
-        <div class="timeline-content">
-          <h4>Zurich → Charlotte via Philadelphia</h4>
-          <div class="tc-method">American · Main Cabin Extra · 11:45 AM departure → Charlotte 6:55 PM</div>
-          <span class="tc-cost">Included in flight award</span>
+        <div class="journey-card-body">
+          <div class="jc-detail">Gare de Lyon → Grindelwald · Approx. 6.5–7 hr via Basel and Interlaken</div>
+          <div class="jc-cost">🚄 $926</div>
+        </div>
+      </div>
+
+      <div class="journey-card">
+        <div class="journey-card-header">
+          <div class="jc-icon-circle swiss">🏔️</div>
+          <div class="jc-header-text">
+            <div class="jc-mode-label">Swiss Rail · First Class</div>
+            <div class="jc-route">Grindelwald → Zurich</div>
+            <div class="jc-date-badge">Sun Aug 9 · 5:45 AM – 8:44 AM</div>
+          </div>
+        </div>
+        <div class="journey-card-body">
+          <div class="jc-detail">2 hr 59 min · 3 changes · Early departure to catch the flight home</div>
+          <div class="jc-cost">🚂 $351.73</div>
+        </div>
+      </div>
+
+      <div class="journey-card">
+        <div class="journey-card-header">
+          <div class="jc-icon-circle flight">✈️</div>
+          <div class="jc-header-text">
+            <div class="jc-mode-label">Return Flight</div>
+            <div class="jc-route">Zurich → Charlotte</div>
+            <div class="jc-date-badge">Sun Aug 9 · 11:45 AM departure</div>
+          </div>
+        </div>
+        <div class="journey-card-body">
+          <div class="jc-detail">American · Main Cabin Extra · via Philadelphia · Arrives CLT 6:55 PM</div>
+          <div class="jc-cost">✈ Included in flight award</div>
         </div>
       </div>
 
