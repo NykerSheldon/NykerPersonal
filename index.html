@@ -282,7 +282,7 @@ body {
 
 /* ─── EXEC RECOMMENDATION ─── */
 .exec-section {
-  background: var(--navy);
+  background: linear-gradient(rgba(13,27,42,0.91), rgba(13,27,42,0.91)), url('https://images.unsplash.com/photo-1529655683826-aba9b3e77383?w=1600&q=80') center/cover no-repeat fixed;
   padding: 80px 40px;
 }
 
@@ -423,7 +423,7 @@ body {
 
 /* ─── LOGISTICS ─── */
 .logistics-section {
-  background: var(--cream);
+  background: linear-gradient(rgba(251,247,239,0.93), rgba(251,247,239,0.93)), url('https://images.unsplash.com/photo-1474487548417-781cb6d646b3?w=1600&q=80') center/cover no-repeat fixed;
   padding: 80px 40px;
 }
 
@@ -576,7 +576,7 @@ body {
 
 /* ─── LODGING ─── */
 .lodging-section {
-  background: var(--navy);
+  background: linear-gradient(rgba(13,27,42,0.88), rgba(13,27,42,0.88)), url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1600&q=80') center/cover no-repeat fixed;
   padding: 80px 40px;
 }
 
@@ -725,7 +725,7 @@ body {
 
 /* ─── FUNDING ─── */
 .funding-section {
-  background: var(--cream);
+  background: linear-gradient(rgba(251,247,239,0.93), rgba(251,247,239,0.93)), url('https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=1600&q=80') center/cover no-repeat fixed;
   padding: 80px 40px;
 }
 
@@ -861,7 +861,7 @@ body {
 
 /* ─── DECISION ─── */
 .decision-section {
-  background: var(--navy);
+  background: linear-gradient(rgba(13,27,42,0.89), rgba(13,27,42,0.89)), url('https://images.unsplash.com/photo-1531366936337-7c912a4589a7?w=1600&q=80') center/cover no-repeat fixed;
   padding: 80px 40px;
   text-align: center;
 }
@@ -893,72 +893,40 @@ body {
 .decision-option {
   display: flex;
   align-items: center;
-  gap: 16px;
-  padding: 16px 20px;
+  gap: 20px;
+  padding: 18px 24px;
   border-radius: 10px;
   border: 1px solid rgba(255,255,255,0.12);
   background: rgba(255,255,255,0.04);
-  cursor: pointer;
   transition: all 0.2s;
 }
 
-.decision-option:hover {
-  background: rgba(201,168,76,0.1);
-  border-color: rgba(201,168,76,0.4);
+.decision-option.static:hover {
+  background: rgba(201,168,76,0.08);
+  border-color: rgba(201,168,76,0.3);
 }
 
-.decision-option input[type="radio"] {
-  width: 18px;
-  height: 18px;
-  accent-color: var(--gold);
-  flex-shrink: 0;
-  cursor: pointer;
-}
-
-.decision-option label {
+.decision-num {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(201,168,76,0.2);
+  border: 1px solid rgba(201,168,76,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Playfair Display', serif;
   font-size: 15px;
-  color: rgba(255,255,255,0.85);
-  cursor: pointer;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 17px;
-}
-
-.decision-option:has(input:checked) {
-  background: rgba(201,168,76,0.15);
-  border-color: var(--gold);
-}
-
-.decision-option:has(input:checked) label {
+  font-weight: 700;
   color: var(--gold-light);
-  font-weight: 600;
+  flex-shrink: 0;
 }
 
-.comments-label {
-  font-size: 11px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.4);
-  text-align: left;
-  margin-bottom: 10px;
-}
-
-.comments-box {
-  width: 100%;
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.15);
-  border-radius: 8px;
-  padding: 14px 16px;
-  color: rgba(255,255,255,0.8);
+.decision-text {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 15px;
-  resize: vertical;
-  min-height: 80px;
-  outline: none;
-  transition: border-color 0.2s;
-}
-
-.comments-box:focus {
-  border-color: rgba(201,168,76,0.5);
+  font-size: 18px;
+  color: rgba(255,255,255,0.85);
+  line-height: 1.4;
 }
 
 .closing-letter {
@@ -1470,29 +1438,26 @@ body {
     <div class="gold-rule" style="margin: 0 auto 40px;"></div>
 
     <div class="decision-card">
-      <p style="font-family:'Cormorant Garamond',serif; font-style:italic; font-size:16px; color:rgba(255,255,255,0.6); margin-bottom:32px; text-align:left;">Please select the option that best reflects the Chief Experience Officer's judgment:</p>
+      <p style="font-family:'Cormorant Garamond',serif; font-style:italic; font-size:17px; color:rgba(255,255,255,0.65); margin-bottom:36px; text-align:left; line-height:1.7;">When you're ready, just send me a text with your response — and feel free to include any edits, questions, or thoughts you have.</p>
 
       <div class="decision-options">
-        <div class="decision-option">
-          <input type="radio" name="decision" id="opt1">
-          <label for="opt1">Approved</label>
+        <div class="decision-option static">
+          <div class="decision-num">A</div>
+          <div class="decision-text">Approved</div>
         </div>
-        <div class="decision-option">
-          <input type="radio" name="decision" id="opt2">
-          <label for="opt2">Approved enthusiastically</label>
+        <div class="decision-option static">
+          <div class="decision-num">B</div>
+          <div class="decision-text">Approved enthusiastically</div>
         </div>
-        <div class="decision-option">
-          <input type="radio" name="decision" id="opt3">
-          <label for="opt3">Approved with revisions</label>
+        <div class="decision-option static">
+          <div class="decision-num">C</div>
+          <div class="decision-text">Approved with revisions</div>
         </div>
-        <div class="decision-option">
-          <input type="radio" name="decision" id="opt4">
-          <label for="opt4">Let's discuss over tea — and perhaps our favorite beverages later</label>
+        <div class="decision-option static">
+          <div class="decision-num">D</div>
+          <div class="decision-text">Let's discuss over tea — and perhaps our favorite beverages later</div>
         </div>
       </div>
-
-      <div class="comments-label">Comments / Requested Changes</div>
-      <textarea class="comments-box" placeholder="The Chief Experience Officer's notes…"></textarea>
 
       <div class="closing-letter">
         <p>I did not build this trip to win an award for logistical complexity. I built it because I can picture the five of us loving London, wandering Paris, and then finally exhaling in Grindelwald.</p>
