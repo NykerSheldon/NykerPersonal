@@ -53,8 +53,8 @@ body {
   position: absolute;
   inset: 0;
   background: 
-    radial-gradient(ellipse at 20% 50%, rgba(201,168,76,0.08) 0%, transparent 60%),
-    radial-gradient(ellipse at 80% 20%, rgba(46,93,142,0.15) 0%, transparent 50%);
+    linear-gradient(180deg, rgba(13,27,42,0.72) 0%, rgba(13,27,42,0.55) 50%, rgba(13,27,42,0.80) 100%),
+    url('https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=1600&q=80') center/cover no-repeat;
 }
 
 .cover-badge {
@@ -600,16 +600,41 @@ body {
   transition: transform 0.2s;
 }
 
-.lodging-card:hover { transform: translateY(-4px); }
+.lodging-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.4); }
+
+.view-listing-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 10px;
+  padding: 8px 16px;
+  background: rgba(201,168,76,0.15);
+  border: 1px solid rgba(201,168,76,0.4);
+  border-radius: 6px;
+  color: var(--gold-light);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.2s;
+  align-self: flex-start;
+}
+
+.view-listing-btn:hover {
+  background: rgba(201,168,76,0.28);
+  border-color: var(--gold);
+  color: var(--gold);
+}
 
 .lodging-header {
   padding: 28px 24px 20px;
   position: relative;
 }
 
-.lodging-header.london { background: linear-gradient(135deg, #1a3a5c, #2E5D8E); }
-.lodging-header.paris  { background: linear-gradient(135deg, #5c1a3a, #8E2E5D); }
-.lodging-header.swiss  { background: linear-gradient(135deg, #1a5c3a, #2E8E5D); }
+.lodging-header.london { background: linear-gradient(135deg, rgba(26,58,92,0.88), rgba(46,93,142,0.82)), url('https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=800&q=80') center/cover no-repeat; }
+.lodging-header.paris  { background: linear-gradient(135deg, rgba(92,26,58,0.88), rgba(142,46,93,0.82)), url('https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=800&q=80') center/cover no-repeat; }
+.lodging-header.swiss  { background: linear-gradient(135deg, rgba(26,92,58,0.82), rgba(46,142,93,0.75)), url('https://images.unsplash.com/photo-1531366936337-7c912a4589a7?w=800&q=80') center/cover no-repeat; }
 
 .lodging-city-tag {
   font-size: 10px;
@@ -1274,6 +1299,7 @@ body {
           <div class="lodging-city-name">London</div>
           <div class="lodging-dates">Jul 30 – Aug 2 · 3 nights</div>
           <div class="lodging-cost">$2,000 <span>confirmed</span></div>
+          <a href="https://www.airbnb.com/rooms/13819748?check_in=2026-07-30&check_out=2026-08-02" target="_blank" class="view-listing-btn">↗ View Listing</a>
         </div>
         <div class="lodging-body">
           <div class="lodging-why">
@@ -1299,6 +1325,7 @@ body {
           <div class="lodging-city-name">Paris</div>
           <div class="lodging-dates">Aug 2 – Aug 5 · 3 nights</div>
           <div class="lodging-cost">$1,500 <span>confirmed</span></div>
+          <a href="https://www.airbnb.com/rooms/978123227296997788?check_in=2026-08-02&check_out=2026-08-05" target="_blank" class="view-listing-btn">↗ View Listing</a>
         </div>
         <div class="lodging-body">
           <div class="lodging-why">
@@ -1324,6 +1351,7 @@ body {
           <div class="lodging-city-name">Grindelwald</div>
           <div class="lodging-dates">Aug 5 – Aug 9 · 4 nights</div>
           <div class="lodging-cost">$5,700 <span>confirmed</span></div>
+          <a href="https://www.simplebooking.it/ibe2/hotel/6808?lang=EN&cur=CHF&in=2026-08-05&out=2026-08-09&guests=A%2CA" target="_blank" class="view-listing-btn">↗ View Hotel</a>
         </div>
         <div class="lodging-body">
           <div class="lodging-why">
@@ -1471,7 +1499,7 @@ body {
         <p>If you can picture that too, I think we should book it.</p>
         <div class="sign-off">
           <span class="love">Love,</span>
-          <span class="from">Your Chief Logistics Officer<br>With strategic planning support from Sara, who is officially on the team.</span>
+          <span class="from">Your Chief Logistics Officer<br>With strategic planning support from gptSara &amp; Steve, who are officially on the team.</span>
         </div>
       </div>
     </div>
@@ -1480,7 +1508,7 @@ body {
 
 <!-- ═══════════════════════════════════════════ FOOTER ═══ -->
 <footer class="footer">
-  <p>Europe 2026 · Recommendation to Proceed · Prepared by the Chief Logistics Officer · Strategic travel support: Sara</p>
+  <p>Europe 2026 · Recommendation to Proceed · Prepared by the Chief Logistics Officer · Strategic travel support: gptSara &amp; Steve</p>
 </footer>
 
 </body>
